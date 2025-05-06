@@ -49,3 +49,5 @@ end
 gem "graphql", "~> 2.5"
 
 gem "graphiql-rails", "~> 1.10"
+
+gem "graphql-batch", "~> 0.6.0"

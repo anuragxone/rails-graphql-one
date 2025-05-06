@@ -12,5 +12,11 @@ module Types
     # How can we expose the posts written by this author?
     # We'll add this next!
     field :posts, [ Types::PostType ], null: false
+
+    def posts
+      # dataloader.with(Loaders::AssociationLoader, Author, :posts).load(object)
+      Loaders::AssociationLoaderForBatch.for(::Author, :posts).load(object)
+
+    end
   end
 end

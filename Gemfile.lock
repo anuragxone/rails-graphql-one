@@ -107,6 +107,9 @@ GEM
       base64
       fiber-storage
       logger
+    graphql-batch (0.6.0)
+      graphql (>= 1.12.18, < 3)
+      promise.rb (~> 0.7.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -178,6 +181,7 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.4.0)
+    promise.rb (0.7.4)
     psych (5.2.4)
       date
       stringio
@@ -317,6 +321,7 @@ DEPENDENCIES
   debug
   graphiql-rails (~> 1.10)
   graphql (~> 2.5)
+  graphql-batch (~> 0.6.0)
   kamal
   pg (~> 1.1)
   puma (>= 5.0)

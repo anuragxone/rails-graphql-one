@@ -15,7 +15,7 @@ module Mutations
     def resolve(id:)
       post = Post.find_by(id: id)
       unless post
-        return { deleted_id: nil, errors: ["Post with ID #{id} not found."] }
+        return { deleted_id: nil, errors: [ "Post with ID #{id} not found." ] }
       end
 
       # Use destroy to trigger callbacks (like dependent: :destroy for posts)
@@ -30,7 +30,7 @@ module Mutations
         # but maybe callbacks could prevent it.
         {
           deleted_id: nil,
-          errors: author.errors.full_messages.presence || ["Failed to delete author."]
+          errors: author.errors.full_messages.presence || [ "Failed to delete author." ]
         }
       end
     end

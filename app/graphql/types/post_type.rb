@@ -12,5 +12,9 @@ module Types
     # We need to link this post back to its author.
     # How do we expose the Author object itself, not just the ID?
     field :author, Types::AuthorType, null: false
+    def author
+      # dataloader.with(Loaders::AssociationLoader, Post, :author).load(object)
+      Loaders::AssociationLoaderForBatch.for(::Post, :author).load(object)
+    end
   end
 end
